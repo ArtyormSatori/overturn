@@ -1,0 +1,74 @@
+{
+  "name": "Overturn",
+  "author": {
+    "name": "Overturn",
+    "email": "shireen@overturn.run",
+    "url": "https://overturn.run"
+  },
+  "version": "0.1.6",
+  "description": "Overturn for Front: captures what the AI drafted, what the agent sent, and why, as a replayable case",
+  "entrypoint": "index.html",
+  "features": ["sidebar_plugin"],
+  "settings": [
+    {
+      "name": "overturn_api_key",
+      "type": "string",
+      "required": true,
+      "description": "A project API key from Overturn (Settings → API keys)."
+    },
+    {
+      "name": "overturn_base_url",
+      "type": "string",
+      "required": false,
+      "default": "https://api.overturn.run",
+      "description": "Your Overturn API URL when self-hosting."
+    },
+    {
+      "name": "agent",
+      "type": "string",
+      "required": false,
+      "default": "support-reply",
+      "description": "The workflow name. One regression suite per workflow."
+    },
+    {
+      "name": "reason_pack",
+      "type": "string",
+      "required": false,
+      "default": "support",
+      "description": "Which reasons agents see: \"support\" or \"claims\"."
+    },
+    {
+      "name": "require_reason",
+      "type": "boolean",
+      "required": false,
+      "default": true,
+      "description": "Block the send until the agent picks a reason when they changed the draft."
+    },
+    {
+      "name": "capture_internal_notes",
+      "type": "boolean",
+      "required": false,
+      "default": false,
+      "description": "Also capture internal notes/comments."
+    },
+    {
+      "name": "decision_fields",
+      "type": "string",
+      "required": false,
+      "description": "Custom fields that are the decision, as id:label pairs."
+    },
+    {
+      "name": "scope_tag",
+      "type": "string",
+      "required": false,
+      "description": "Optional tag name. Only conversations carrying this tag are watched."
+    },
+    {
+      "name": "min_draft_chars",
+      "type": "string",
+      "required": false,
+      "default": "80",
+      "description": "Text inserted into the reply box at least this long counts as the draft."
+    }
+  ]
+}
